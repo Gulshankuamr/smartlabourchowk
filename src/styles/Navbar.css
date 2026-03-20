@@ -1,0 +1,545 @@
+/* ===== RESET & BASE ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== NAVBAR STYLES ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 5%;
+  background: transparent;
+  transition: all 0.3s ease-in-out;
+  z-index: 1000;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Navbar when scrolled */
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 0.8rem 5%;
+}
+
+/* ===== LOGO ===== */
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  cursor: pointer;
+  letter-spacing: -0.5px;
+  transition: transform 0.2s ease;
+}
+
+.logo:hover {
+  transform: scale(1.02);
+}
+
+/* ===== NAVIGATION LINKS ===== */
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links li a {
+  color:white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Underline hover effect */
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #667eea;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* Scrolled navbar link color */
+.navbar.scrolled .nav-links li a {
+  color: #2d3748;
+}
+
+.navbar.scrolled .nav-links li a:hover {
+  color: #667eea;
+}
+
+/* ===== RIGHT SECTION ===== */
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* ===== LOGIN BUTTON ===== */
+.login-btn {
+  padding: 0.6rem 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  white-space: nowrap;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.login-btn:active {
+  transform: translateY(0);
+}
+
+/* ===== HAMBURGER MENU ===== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #333;
+  margin: 2px 0;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger animation */
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+  background: #667eea;
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+  background: #667eea;
+}
+
+/* Scrolled navbar hamburger color */
+.navbar.scrolled .hamburger span {
+  background: #333;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablet and Mobile */
+@media screen and (max-width: 768px) {
+  /* Show hamburger */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hide nav-links by default on mobile */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 350px;
+    height: 100vh;
+    background: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transition: right 0.4s ease-in-out;
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  /* Active state for mobile menu */
+  .nav-links.active {
+    right: 0;
+  }
+
+  /* Style mobile menu items */
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links li a {
+    display: block;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    color: #333;
+  }
+
+  .nav-links li a::after {
+    display: none;
+  }
+
+  .nav-links li a:hover {
+    background: rgba(102, 126, 234, 0.1);
+  }
+
+  /* Adjust navbar padding for mobile */
+  .navbar {
+    padding: 1rem 5%;
+  }
+
+  .navbar.scrolled {
+    padding: 0.7rem 5%;
+  }
+
+  /* Logo size adjustment */
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  /* Login button adjustment */
+  .login-btn {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Small Mobile */
+@media screen and (max-width: 480px) {
+  .nav-links {
+    width: 85%;
+  }
+
+  .nav-links li a {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  .login-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* ===== OPTIONAL: Backdrop for mobile menu ===== */
+/* Add this if you want a backdrop overlay when menu is open */
+.nav-links.active::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: -1;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* Add these styles to your existing Navbar.css */
+
+/* ===== LOGIN DROPDOWN ===== */
+.login-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.login-btn {
+  padding: 0.6rem 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dropdown-arrow {
+  font-size: 0.7rem;
+  transition: transform 0.3s ease;
+}
+
+.login-dropdown:hover .dropdown-arrow,
+.dropdown-menu.active + .login-btn .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.login-btn:active {
+  transform: translateY(0);
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 220px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1001;
+  overflow: hidden;
+  border: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.dropdown-menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Hover effect for desktop */
+.login-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  color: #2d3748;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.dropdown-menu a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu a:hover {
+  background: linear-gradient(135deg, #667eea10 0%, #764ba210 100%);
+  color: #667eea;
+  padding-left: 25px;
+}
+
+.dropdown-icon {
+  font-size: 1.2rem;
+  min-width: 24px;
+  text-align: center;
+}
+
+/* Dropdown arrow pointer */
+.dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  right: 20px;
+  width: 12px;
+  height: 12px;
+  background: white;
+  transform: rotate(45deg);
+  border-left: 1px solid rgba(102, 126, 234, 0.1);
+  border-top: 1px solid rgba(102, 126, 234, 0.1);
+  z-index: -1;
+}
+
+/* Scrolled navbar dropdown */
+.navbar.scrolled .dropdown-menu {
+  background: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.navbar.scrolled .dropdown-menu::before {
+  background: white;
+}
+
+/* ===== MOBILE RESPONSIVE UPDATES ===== */
+@media screen and (max-width: 768px) {
+  /* Update login dropdown for mobile */
+  .login-dropdown {
+    width: 100%;
+  }
+
+  .login-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .dropdown-menu {
+    position: static;
+    width: 100%;
+    margin-top: 8px;
+    box-shadow: none;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    display: none;
+    background: rgba(255, 255, 255, 0.95);
+  }
+
+  .dropdown-menu.active {
+    display: block;
+  }
+
+  .dropdown-menu::before {
+    display: none;
+  }
+
+  .dropdown-menu a {
+    padding: 12px 20px;
+    justify-content: center;
+  }
+
+  .dropdown-menu a:hover {
+    padding-left: 20px;
+    background: rgba(102, 126, 234, 0.1);
+  }
+
+  /* Hide hover dropdown on mobile, only show on click */
+  .login-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  /* Adjust right section for mobile */
+  .right-section {
+    gap: 1rem;
+  }
+}
+
+/* Small mobile */
+@media screen and (max-width: 480px) {
+  .dropdown-menu a {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+
+  .dropdown-icon {
+    font-size: 1rem;
+  }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-menu.active {
+  animation: dropdownFadeIn 0.3s ease;
+}
+
+/* Dark mode support if needed */
+@media (prefers-color-scheme: dark) {
+  .dropdown-menu {
+    background: #1a1a2e;
+    border-color: rgba(102, 126, 234, 0.2);
+  }
+
+  .dropdown-menu a {
+    color: #e2e8f0;
+    border-bottom-color: rgba(102, 126, 234, 0.1);
+  }
+
+  .dropdown-menu a:hover {
+    background: rgba(102, 126, 234, 0.15);
+    color: #667eea;
+  }
+
+  .dropdown-menu::before {
+    background: #1a1a2e;
+    border-left-color: rgba(102, 126, 234, 0.2);
+    border-top-color: rgba(102, 126, 234, 0.2);
+  }
+}
