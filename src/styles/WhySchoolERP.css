@@ -1,16 +1,17 @@
-/* WhySchoolERP.css */
+/* WhySchoolERP.css - White Theme */
 
 .why-schoolerp {
-  --bg-dark: #0f172a;
-  --bg-card: #1e293b;
-  --text-light: #f1f5f9;
-  --text-muted: #94a3b8;
-  --border-color: rgba(255, 255, 255, 0.1);
+  --bg-white: #ffffff;
+  --bg-light: #f8fafc;
+  --bg-card: #ffffff;
+  --text-dark: #0f172a;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
   --gradient-primary: linear-gradient(135deg, #3b82f6, #8b5cf6);
   --gradient-secondary: linear-gradient(135deg, #06b6d4, #3b82f6);
   
-  background: var(--bg-dark);
-  color: var(--text-light);
+  background: var(--bg-white);
+  color: var(--text-dark);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   overflow-x: hidden;
 }
@@ -30,12 +31,12 @@
 .badge {
   display: inline-block;
   padding: 0.5rem 1rem;
-  background: rgba(59, 130, 246, 0.1);
-  border: 1px solid rgba(59, 130, 246, 0.3);
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
   border-radius: 50px;
   font-size: 0.875rem;
   font-weight: 500;
-  color: #60a5fa;
+  color: #2563eb;
   margin-bottom: 1.5rem;
 }
 
@@ -43,14 +44,14 @@
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, #fff 0%, #60a5fa 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #2563eb 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
 .header-title .highlight {
-  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -76,19 +77,20 @@
 }
 
 .stat-card {
-  background: rgba(30, 41, 59, 0.6);
+  background: var(--bg-card);
   backdrop-filter: blur(10px);
   border: 1px solid var(--border-color);
   border-radius: 20px;
   padding: 2rem 1.5rem;
   text-align: center;
   transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .stat-card:hover {
   transform: translateY(-5px);
   border-color: #3b82f6;
-  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.15);
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.1);
 }
 
 .stat-icon {
@@ -99,7 +101,7 @@
 .stat-value {
   font-size: 2rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #fff, #60a5fa);
+  background: linear-gradient(135deg, #0f172a, #2563eb);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -128,7 +130,7 @@
 }
 
 .feature-card {
-  background: rgba(30, 41, 59, 0.5);
+  background: var(--bg-card);
   backdrop-filter: blur(10px);
   border: 1px solid var(--border-color);
   border-radius: 24px;
@@ -136,12 +138,13 @@
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .feature-card:hover {
   transform: translateY(-8px);
   border-color: #3b82f6;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
 }
 
 .card-glow {
@@ -153,10 +156,11 @@
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
 }
 
 .feature-card:hover .card-glow {
-  opacity: 0.5;
+  opacity: 1;
 }
 
 .feature-icon {
@@ -169,6 +173,7 @@
   font-size: 2rem;
   margin-bottom: 1.5rem;
   transition: transform 0.3s ease;
+  background: #eff6ff;
 }
 
 .feature-card:hover .feature-icon {
@@ -179,7 +184,7 @@
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
-  color: var(--text-light);
+  color: var(--text-dark);
 }
 
 .feature-description {
@@ -199,9 +204,9 @@
 .benefit-tag {
   font-size: 0.75rem;
   padding: 0.25rem 0.75rem;
-  background: rgba(59, 130, 246, 0.1);
+ 
   border-radius: 6px;
-  color: #60a5fa;
+  color: #020306;
 }
 
 .learn-more-btn {
@@ -210,7 +215,7 @@
   background: transparent;
   border: 1px solid var(--border-color);
   border-radius: 12px;
-  color: var(--text-light);
+  color: var(--text-dark);
   font-size: 0.875rem;
   font-weight: 500;
   cursor: pointer;
@@ -224,6 +229,7 @@
 .learn-more-btn:hover {
   background: #3b82f6;
   border-color: #3b82f6;
+  color: white;
   transform: translateX(5px);
 }
 
@@ -235,13 +241,14 @@
 
 .learn-more-btn:hover .btn-arrow {
   transform: translateX(3px);
+  filter: brightness(0) invert(1);
 }
 
 /* CTA Section */
 .cta-section {
   padding: 4rem 2rem;
   margin: 2rem 2rem;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+  background: linear-gradient(135deg, #eff6ff 0%, #f5f3ff 100%);
   border-radius: 32px;
   border: 1px solid var(--border-color);
 }
@@ -260,7 +267,7 @@
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, #fff, #60a5fa);
+  background: linear-gradient(135deg, #0f172a, #2563eb);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -294,7 +301,7 @@
 
 .cta-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
 }
 
 .cta-secondary {
@@ -302,7 +309,7 @@
   background: transparent;
   border: 1px solid var(--border-color);
   border-radius: 12px;
-  color: var(--text-light);
+  color: var(--text-dark);
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
@@ -311,7 +318,7 @@
 
 .cta-secondary:hover {
   border-color: #3b82f6;
-  background: rgba(59, 130, 246, 0.1);
+  background: rgba(59, 130, 246, 0.05);
   transform: translateY(-2px);
 }
 
@@ -424,7 +431,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.05), transparent);
   transition: left 0.5s ease;
   pointer-events: none;
 }
@@ -439,7 +446,7 @@
 }
 
 .why-schoolerp::-webkit-scrollbar-track {
-  background: var(--bg-dark);
+  background: #f1f5f9;
 }
 
 .why-schoolerp::-webkit-scrollbar-thumb {
@@ -448,5 +455,5 @@
 }
 
 .why-schoolerp::-webkit-scrollbar-thumb:hover {
-  background: #60a5fa;
+  background: #2563eb;
 }

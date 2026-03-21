@@ -1,9 +1,9 @@
-/* Features.css */
+/* Features.css - White Theme */
 
 /* Global Styles */
 .aura-section {
   position: relative;
-  background: linear-gradient(135deg, #0a0a0f 0%, #0f0f1a 100%);
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
   padding: 6rem 2rem;
   overflow: hidden;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -18,8 +18,8 @@
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 20% 80%, rgba(66, 153, 225, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(102, 126, 234, 0.08) 0%, transparent 50%);
+    radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.03) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -30,7 +30,7 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(66, 153, 225, 0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.2), transparent);
 }
 
 .aura-container {
@@ -49,15 +49,14 @@
 
 .aura-badge {
   display: inline-block;
-  background: linear-gradient(135deg, rgba(66, 153, 225, 0.1), rgba(102, 126, 234, 0.1));
-  backdrop-filter: blur(10px);
-  color: #60a5fa;
+  background: linear-gradient(135deg, #eff6ff, #f5f3ff);
+  color: #3b82f6;
   font-size: 0.875rem;
   font-weight: 600;
   padding: 0.5rem 1.25rem;
   border-radius: 100px;
   margin-bottom: 1.5rem;
-  border: 1px solid rgba(66, 153, 225, 0.2);
+  border: 1px solid #e2e8f0;
   letter-spacing: 0.5px;
   text-transform: uppercase;
 }
@@ -66,7 +65,7 @@
   font-size: 3rem;
   font-weight: 800;
   margin-bottom: 1.25rem;
-  background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -74,7 +73,7 @@
 }
 
 .aura-highlight {
-  background: linear-gradient(135deg, #60a5fa, #8b5cf6);
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -88,13 +87,13 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, #60a5fa, #8b5cf6);
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
   border-radius: 2px;
 }
 
 .aura-description {
   font-size: 1.125rem;
-  color: #94a3b8;
+  color: #64748b;
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
@@ -111,15 +110,15 @@
 /* Card Styles */
 .aura-card {
   position: relative;
-  background: rgba(15, 23, 42, 0.6);
-  backdrop-filter: blur(10px);
+  background: #ffffff;
   border-radius: 1.5rem;
   padding: 2rem;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(66, 153, 225, 0.1);
+  border: 1px solid #e2e8f0;
   overflow: hidden;
   opacity: 0;
   transform: translateY(30px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .aura-card.fade-in {
@@ -128,8 +127,8 @@
 
 .aura-card:hover {
   transform: translateY(-8px);
-  border-color: rgba(66, 153, 225, 0.3);
-  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.3);
+  border-color: #3b82f6;
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.1);
 }
 
 /* Glow Effect */
@@ -139,7 +138,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 50% 0%, rgba(66, 153, 225, 0.1), transparent 70%);
+  background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.05), transparent 70%);
   opacity: 0;
   transition: opacity 0.4s ease;
   pointer-events: none;
@@ -166,7 +165,7 @@
 .aura-icon-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(66, 153, 225, 0.2), rgba(102, 126, 234, 0.2));
+  background: linear-gradient(135deg, #eff6ff, #f5f3ff);
   border-radius: 1rem;
   transform: rotate(10deg);
   transition: transform 0.3s ease;
@@ -184,7 +183,7 @@
   align-items: center;
   justify-content: center;
   font-size: 2rem;
-  background: linear-gradient(135deg, #60a5fa, #8b5cf6);
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
   border-radius: 1rem;
   color: white;
   z-index: 1;
@@ -195,14 +194,14 @@
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 0.75rem;
-  background: linear-gradient(135deg, #ffffff, #e2e8f0);
+  background: linear-gradient(135deg, #0f172a, #1e293b);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
 .aura-card-description {
-  color: #94a3b8;
+  color: #64748b;
   line-height: 1.6;
   margin-bottom: 1.5rem;
   font-size: 0.95rem;
@@ -217,7 +216,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: #60a5fa;
+  color: #3b82f6;
   text-decoration: none;
   font-weight: 500;
   font-size: 0.875rem;
@@ -232,7 +231,7 @@
   left: 0;
   width: 0;
   height: 1px;
-  background: linear-gradient(90deg, #60a5fa, #8b5cf6);
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
   transition: width 0.3s ease;
 }
 
@@ -265,7 +264,7 @@
   position: absolute;
   width: 4px;
   height: 4px;
-  background: rgba(66, 153, 225, 0.3);
+  background: rgba(59, 130, 246, 0.2);
   border-radius: 50%;
   animation: floatParticle 8s infinite linear;
 }
@@ -384,10 +383,10 @@
   }
 }
 
-/* Dark Mode Optimization */
-@media (prefers-color-scheme: dark) {
+/* Light Mode Optimization */
+@media (prefers-color-scheme: light) {
   .aura-card {
-    background: rgba(15, 23, 42, 0.8);
+    background: #ffffff;
   }
 }
 
@@ -397,11 +396,11 @@
 }
 
 .aura-section::-webkit-scrollbar-track {
-  background: #0f0f1a;
+  background: #f1f5f9;
 }
 
 .aura-section::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #60a5fa, #8b5cf6);
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
   border-radius: 4px;
 }
 
@@ -426,15 +425,16 @@
 }
 
 .aura-card:hover .aura-card-title {
-  background: linear-gradient(135deg, #60a5fa, #8b5cf6);
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-/* Glass Morphism Enhancement */
+/* Glass Morphism Enhancement - Removed for white theme */
+/* Kept for compatibility but disabled */
 @supports (backdrop-filter: blur(10px)) {
   .aura-card {
-    backdrop-filter: blur(10px);
+    backdrop-filter: none;
   }
 }

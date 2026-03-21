@@ -5,78 +5,71 @@ import "../../styles/HowItWorks.css";
 export default function HowItWorks() {
   const steps = [
     {
-      number: "01",
       title: "Sign Up & Setup",
-      description: "Create your account and set up your institution profile in just a few minutes. Our onboarding team guides you through initial configuration.",
-      icon: "📝",
-      duration: "15 minutes"
+      description:
+        "Create your account and set up your institution profile in just a few minutes. Our onboarding team guides you through initial configuration.",
     },
     {
-      number: "02",
       title: "Configure & Customize",
-      description: "Tailor the system according to your institution's needs. Set up academic years, fee structures, user roles, and permissions.",
-      icon: "⚙️",
-      duration: "1-2 hours"
+      description:
+        "Tailor the system according to your institution's needs. Set up academic years, fee structures, user roles, and permissions.",
     },
     {
-      number: "03",
       title: "Import Your Data",
-      description: "Easily migrate existing student records, teacher information, and historical data using our bulk upload tools.",
-      icon: "📊",
-      duration: "2-3 hours"
+      description:
+        "Easily migrate existing student records, teacher information, and historical data using our bulk upload tools.",
     },
     {
-      number: "04",
       title: "Train Your Team",
-      description: "Access comprehensive training materials and schedule live sessions to get your staff comfortable with the system.",
-      icon: "🎓",
-      duration: "1 day"
+      description:
+        "Access comprehensive training materials and schedule live sessions to get your staff comfortable with the system.",
     },
     {
-      number: "05",
       title: "Go Live",
-      description: "Launch your ERP system with confidence. Our team ensures smooth transition with real-time monitoring and support.",
-      icon: "🚀",
-      duration: "Ready to go"
+      description:
+        "Launch your ERP system with confidence. Our team ensures smooth transition with real-time monitoring and support.",
     },
     {
-      number: "06",
       title: "Grow & Scale",
-      description: "Access new features, advanced analytics, and scale your operations as your institution grows with us.",
-      icon: "📈",
-      duration: "Ongoing"
-    }
+      description:
+        "Access new features, advanced analytics, and scale your operations as your institution grows with us.",
+    },
   ];
 
   const benefits = [
     {
       title: "Quick Implementation",
       description: "Get your institution up and running in less than a week",
-      icon: "⚡"
+      icon: "⚡",
     },
     {
       title: "Easy to Use",
       description: "Intuitive interface that requires minimal training",
-      icon: "🎯"
+      icon: "🎯",
     },
     {
       title: "Secure & Reliable",
       description: "Bank-level security with 99.9% uptime guarantee",
-      icon: "🔒"
+      icon: "🔒",
     },
     {
       title: "24/7 Support",
       description: "Dedicated support team available around the clock",
-      icon: "💪"
-    }
+      icon: "💪",
+    },
   ];
 
   return (
     <div className="howitworks-page">
       {/* Hero Section */}
       <div className="howitworks-hero">
-        <h1>How <span className="gold-text">SchoolERP</span> Works</h1>
-        <p>Get started in just a few simple steps and transform your institution management</p>
+        <h1>
+          How <span className="gold-text">SchoolERP</span> Works
+        </h1>
+        <p>
+          Get started in just a few simple steps and transform your institution
+          management
+        </p>
       </div>
 
       {/* Steps Section */}
@@ -89,7 +82,7 @@ export default function HowItWorks() {
               <h3 className="step-title">{step.title}</h3>
               <p className="step-description">{step.description}</p>
               <div className="step-duration">
-                <span className="duration-icon">⏱️</span>
+                <span className="duration-icon"></span>
                 <span>{step.duration}</span>
               </div>
             </div>
@@ -131,7 +124,9 @@ export default function HowItWorks() {
       {/* Benefits Section */}
       <div className="howitworks-benefits">
         <h2>Why Choose Our Process?</h2>
-        <p className="benefits-subtitle">We make implementation smooth and hassle-free</p>
+        <p className="benefits-subtitle">
+          We make implementation smooth and hassle-free
+        </p>
         <div className="benefits-grid">
           {benefits.map((benefit, index) => (
             <div key={index} className="benefit-card">
@@ -149,7 +144,10 @@ export default function HowItWorks() {
           <div className="support-text">
             <span className="support-badge">24/7 Support</span>
             <h2>Need Help Getting Started?</h2>
-            <p>Our dedicated support team is here to guide you through every step of the process</p>
+            <p>
+              Our dedicated support team is here to guide you through every step
+              of the process
+            </p>
             <div className="support-stats">
               <div className="stat">
                 <span className="stat-value">24/7</span>
@@ -181,7 +179,9 @@ export default function HowItWorks() {
       {/* CTA Section */}
       <div className="cta-section">
         <h2>Ready to Get Started?</h2>
-        <p>Join thousands of educational institutions already using SchoolERP</p>
+        <p>
+          Join thousands of educational institutions already using SchoolERP
+        </p>
         <div className="cta-buttons">
           <button className="cta-primary">Start Free Trial</button>
           <button className="cta-secondary">Watch Demo Video</button>

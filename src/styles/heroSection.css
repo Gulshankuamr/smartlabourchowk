@@ -11,7 +11,10 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding-top: 100px;  /* Add this - navbar ki height jitna */
+  margin-top: 0;
 }
+
 
 .hero::before {
   content: "";

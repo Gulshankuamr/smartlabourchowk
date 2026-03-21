@@ -1,6 +1,6 @@
 // Footer.jsx
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import "../styles//Footer.css";
 
@@ -45,6 +45,24 @@ export default function Footer() {
     { name: "Instagram", icon: "📸", href: "https://instagram.com" },
     { name: "YouTube", icon: "▶️", href: "https://youtube.com" },
   ];
+
+  // Back to top button visibility
+  useEffect(() => {
+    const backToTopButton = document.querySelector('.back-to-top');
+    
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        backToTopButton?.classList.add('visible');
+      } else {
+        backToTopButton?.classList.remove('visible');
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <footer className="aura-footer">
@@ -108,15 +126,25 @@ export default function Footer() {
 
           {/* Resources & Legal Combined */}
           <div className="footer-column">
-     
-            
-    
+            <h3 className="footer-title">Resources</h3>
+            <ul className="footer-links">
+              {resources.map((resource, index) => (
+                <li key={index}>
+                  <Link href={resource.href}>
+                    <span className="link-arrow">→</span>
+                    {resource.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+        
           </div>
         </div>
       </div>
 
-      {/* Newsletter Section */}
-      
+      {/* About Us Section with Social Icons */}
+     
+
       {/* Bottom Bar */}
       <div className="footer-bottom">
         <div className="footer-container">
@@ -124,35 +152,11 @@ export default function Footer() {
             <div className="copyright">
               <p>© {currentYear} School ERP. All rights reserved.</p>
             </div>
-            
-            <div className="social-links">
-              {socialLinks.map((social, index) => (
-                <a 
-                  key={index}
-                  href={social.href}
-                  className="social-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={social.name}
-                >
-                  <span className="social-icon">{social.icon}</span>
-                </a>
-              ))}
-            </div>
           </div>
         </div>
       </div>
 
-      {/* Back to Top Button */}
-      <button 
-        className="back-to-top"
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        aria-label="Back to top"
-      >
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M12 19V5M5 12l7-7 7 7"/>
-        </svg>
-      </button>
+    
     </footer>
   );
 }
