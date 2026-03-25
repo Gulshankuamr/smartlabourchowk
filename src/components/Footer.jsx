@@ -9,26 +9,19 @@ export default function Footer() {
 
   const quickLinks = [
     { name: "About Us", href: "/about" },
-    { name: "Features", href: "/features" },
-    { name: "Pricing", href: "/pricing" },
+    { name: "Features", href: "/feature" },
+
     { name: "Demo", href: "/demo" },
-    { name: "Contact", href: "/contact" },
   ];
 
   const solutions = [
-    { name: "School Management", href: "/solutions/school" },
-    { name: "College Management", href: "/solutions/college" },
-    { name: "Coaching Institute", href: "/solutions/coaching" },
-    { name: "Pre-School", href: "/solutions/preschool" },
-    { name: "University", href: "/solutions/university" },
+ 
   ];
 
   const resources = [
     { name: "Blog", href: "/blog" },
-    { name: "Help Center", href: "/help" },
-    { name: "API Documentation", href: "/api-docs" },
-    { name: "Community", href: "/community" },
-    { name: "Status", href: "/status" },
+    { name: "Help Center", href: "/support" },
+   
   ];
 
   const legal = [
@@ -48,20 +41,20 @@ export default function Footer() {
 
   // Back to top button visibility
   useEffect(() => {
-    const backToTopButton = document.querySelector('.back-to-top');
-    
+    const backToTopButton = document.querySelector(".back-to-top");
+
     const handleScroll = () => {
       if (window.scrollY > 300) {
-        backToTopButton?.classList.add('visible');
+        backToTopButton?.classList.add("visible");
       } else {
-        backToTopButton?.classList.remove('visible');
+        backToTopButton?.classList.remove("visible");
       }
     };
-    
-    window.addEventListener('scroll', handleScroll);
+
+    window.addEventListener("scroll", handleScroll);
     handleScroll();
-    
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -73,23 +66,27 @@ export default function Footer() {
           <div className="footer-column company-column">
             <div className="footer-logo">
               <div className="logo-icon">🏫</div>
-              <span className="logo-text">School<span className="logo-highlight">ERP</span></span>
+              <span className="logo-text">
+                School<span className="logo-highlight">ERP</span>
+              </span>
             </div>
             <p className="footer-description">
-              Revolutionizing education management with cutting-edge technology solutions for schools, colleges, and educational institutions worldwide.
+              Revolutionizing education management with cutting-edge technology
+              solutions for schools, colleges, and educational institutions
+              worldwide.
             </p>
             <div className="footer-contact">
               <div className="contact-item">
                 <span className="contact-icon">📧</span>
-                <a href="mailto:info@schoolknot.com">info@schoolknot.com</a>
+                <a href="mailto:info@schoolknot.com">info@foundercodes.com</a>
               </div>
               <div className="contact-item">
                 <span className="contact-icon">📞</span>
-                <a href="tel:+18001234567">+1 (800) 123-4567</a>
+                <a href="tel:+18001234567">9236788668</a>
               </div>
               <div className="contact-item">
                 <span className="contact-icon">📍</span>
-                <span>123 Education Street, Silicon Valley, CA 94025</span>
+                <span> Gaur City Mall  office space building 14 floor 14119</span>
               </div>
             </div>
           </div>
@@ -109,20 +106,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Solutions */}
-          <div className="footer-column">
-            <h3 className="footer-title">Solutions</h3>
-            <ul className="footer-links">
-              {solutions.map((solution, index) => (
-                <li key={index}>
-                  <Link href={solution.href}>
-                    <span className="link-arrow">→</span>
-                    {solution.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
 
           {/* Resources & Legal Combined */}
           <div className="footer-column">
@@ -137,13 +120,11 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-        
           </div>
         </div>
       </div>
 
       {/* About Us Section with Social Icons */}
-     
 
       {/* Bottom Bar */}
       <div className="footer-bottom">
@@ -155,8 +136,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
-    
     </footer>
   );
 }

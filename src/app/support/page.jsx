@@ -7,7 +7,7 @@ export default function Support() {
     name: "",
     email: "",
     subject: "",
-    message: ""
+    message: "",
   });
   const [submitted, setSubmitted] = useState(false);
 
@@ -27,33 +27,39 @@ export default function Support() {
     {
       id: 1,
       question: "How do I get started with School ERP?",
-      answer: "Getting started is easy! Contact our sales team, and we'll schedule a demo, set up your account, and provide training for your staff."
+      answer:
+        "Getting started is easy! Contact our sales team, and we'll schedule a demo, set up your account, and provide training for your staff.",
     },
     {
       id: 2,
       question: "Is there a free trial available?",
-      answer: "Yes! We offer a 14-day free trial with full access to all features. No credit card required."
+      answer:
+        "Yes! We offer a 14-day free trial with full access to all features. No credit card required.",
     },
     {
       id: 3,
       question: "Can I access School ERP on mobile devices?",
-      answer: "Absolutely! School ERP is fully responsive and works on all devices. We also have dedicated mobile apps for iOS and Android."
+      answer:
+        "Absolutely! School ERP is fully responsive and works on all devices. We also have dedicated mobile apps for iOS and Android.",
     },
     {
       id: 4,
       question: "How secure is my data?",
-      answer: "We use bank-level encryption, regular backups, and strict access controls to ensure your data is always safe and secure."
+      answer:
+        "We use bank-level encryption, regular backups, and strict access controls to ensure your data is always safe and secure.",
     },
     {
       id: 5,
       question: "Do you provide training and support?",
-      answer: "Yes! We provide comprehensive training, documentation, video tutorials, and 24/7 customer support via chat, email, and phone."
+      answer:
+        "Yes! We provide comprehensive training, documentation, video tutorials, and 24/7 customer support via chat, email, and phone.",
     },
     {
       id: 6,
       question: "Can I customize the system for my school?",
-      answer: "Yes! School ERP is highly customizable. You can add custom fields, modules, and integrate with other systems as needed."
-    }
+      answer:
+        "Yes! School ERP is highly customizable. You can add custom fields, modules, and integrate with other systems as needed.",
+    },
   ];
 
   const supportChannels = [
@@ -62,29 +68,29 @@ export default function Support() {
       title: "Live Chat",
       description: "Chat with our support team",
       availability: "24/7 Available",
-      action: "Start Chat"
+      action: "Start Chat",
     },
     {
       icon: "📧",
       title: "Email Support",
       description: "Get help via email",
       availability: "Response within 24h",
-      action: "support@schooleerp.com"
+      action: "info@foundercodes.com",
     },
     {
       icon: "📞",
       title: "Phone Support",
       description: "Call our support team",
-      availability: "Mon-Fri, 9AM-6PM",
-      action: "+91 98765 43210"
+      availability: "24 hour",
+      action: "+91 9236788668",
     },
     {
       icon: "📚",
       title: "Knowledge Base",
       description: "Browse documentation",
       availability: "Self-service",
-      action: "Browse Articles"
-    }
+      action: "Browse Articles",
+    },
   ];
 
   return (
@@ -115,8 +121,17 @@ export default function Support() {
                 <div className="channel-icon">{channel.icon}</div>
                 <h3>{channel.title}</h3>
                 <p>{channel.description}</p>
-                <span className="channel-availability">{channel.availability}</span>
-                <button className="channel-btn">
+                <span className="channel-availability">
+                  {channel.availability}
+                </span>
+                <button
+                  className="channel-btn"
+                  onClick={() => {
+                    if (channel.title === "Live Chat") {
+                      window.open("https://wa.me/9236788668", "_blank");
+                    }
+                  }}
+                >
                   {channel.action}
                   <span className="btn-arrow">→</span>
                 </button>
@@ -152,8 +167,11 @@ export default function Support() {
           <div className="contact-wrapper">
             <div className="contact-info">
               <h2>Still Have Questions?</h2>
-              <p>Our support team is here to help you 24/7. Fill out the form and we'll get back to you within 24 hours.</p>
-              
+              <p>
+                Our support team is here to help you 24/7. Fill out the form and
+                we'll get back to you within 24 hours.
+              </p>
+
               <div className="info-item">
                 <div className="info-icon">📍</div>
                 <div>
@@ -161,7 +179,7 @@ export default function Support() {
                   <p>123 Education Street, Bangalore, India</p>
                 </div>
               </div>
-              
+
               <div className="info-item">
                 <div className="info-icon">📧</div>
                 <div>
@@ -169,7 +187,7 @@ export default function Support() {
                   <p>support@schooleerp.com</p>
                 </div>
               </div>
-              
+
               <div className="info-item">
                 <div className="info-icon">📞</div>
                 <div>
@@ -185,7 +203,7 @@ export default function Support() {
                   ✓ Thank you! We'll get back to you soon.
                 </div>
               )}
-              
+
               <div className="form-group">
                 <input
                   type="text"
@@ -196,7 +214,7 @@ export default function Support() {
                   required
                 />
               </div>
-              
+
               <div className="form-group">
                 <input
                   type="email"
@@ -207,7 +225,7 @@ export default function Support() {
                   required
                 />
               </div>
-              
+
               <div className="form-group">
                 <input
                   type="text"
@@ -218,7 +236,7 @@ export default function Support() {
                   required
                 />
               </div>
-              
+
               <div className="form-group">
                 <textarea
                   name="message"
@@ -229,7 +247,7 @@ export default function Support() {
                   required
                 ></textarea>
               </div>
-              
+
               <button type="submit" className="submit-btn">
                 Send Message
                 <span className="btn-arrow">→</span>
