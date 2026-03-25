@@ -64,7 +64,7 @@ export default function Navbar() {
             <Image
               src="/schoolERP.jpeg"
               alt="School ERP Logo"
-              width={140}
+              width={130}
               height={45}
               priority
               className="navbar-logo"
