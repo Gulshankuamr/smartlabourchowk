@@ -117,19 +117,19 @@ export default function Navbar() {
 
           {/* Dropdown Menu */}
           <div className={`dropdown-menu ${dropdownOpen ? "active" : ""}`}>
-            <Link href="/School-Login" onClick={handleLinkClick}>
+            <Link href="#" onClick={handleLinkClick}>
               <span className="dropdown-icon">🏫</span>
               School Login
             </Link>
-            <Link href="/admin-login" onClick={handleLinkClick}>
+            <Link href="#" onClick={handleLinkClick}>
               <span className="dropdown-icon">👨‍💼</span>
               Student Login
             </Link>
-            <Link href="/teacher-login" onClick={handleLinkClick}>
+            <Link href="#" onClick={handleLinkClick}>
               <span className="dropdown-icon">👩‍🏫</span>
               Teacher Login
             </Link>
-            <Link href="/admin-login" onClick={handleLinkClick}>
+            <Link href="#" onClick={handleLinkClick}>
               <span className="dropdown-icon">👨‍💼</span>
               Account Login
             </Link>
