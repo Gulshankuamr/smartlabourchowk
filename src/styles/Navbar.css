@@ -345,7 +345,7 @@
 
   /* Logo size for mobile */
   .navbar-logo {
-    max-height: 40px !important; /* Smaller logo on mobile */
+    max-height: 30px !important; /* Smaller logo on mobile */
   }
 
   /* Login button adjustment */
@@ -421,7 +421,7 @@
 
   /* Logo size for small mobile */
   .navbar-logo {
-    max-height: 85px !important;
+    max-height: 65px !important;
   }
 
   .login-btn {

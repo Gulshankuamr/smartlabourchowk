@@ -62,16 +62,16 @@ export default function Navbar() {
         <Link href="/" onClick={handleLinkClick}>
           <div className="logo-container">
             <Image
-              src="/logo.png"
+              src="/schoolERP.jpeg"
               alt="School ERP Logo"
-              width={180}
+              width={140}
               height={45}
               priority
               className="navbar-logo"
               style={{
                 width: "auto",
                 height: "auto",
-                maxHeight: "155px", // This controls logo height - adjust this value
+                maxHeight: "120px", // This controls logo height - adjust this value
               }}
             />
           </div>
@@ -117,7 +117,7 @@ export default function Navbar() {
 
           {/* Dropdown Menu */}
           <div className={`dropdown-menu ${dropdownOpen ? "active" : ""}`}>
-            <Link href="#" onClick={handleLinkClick}>
+            <Link href="/logo.png" onClick={handleLinkClick}>
               <span className="dropdown-icon">🏫</span>
               School Login
             </Link>
