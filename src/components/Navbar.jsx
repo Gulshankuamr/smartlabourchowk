@@ -117,9 +117,9 @@ export default function Navbar() {
 
           {/* Dropdown Menu */}
           <div className={`dropdown-menu ${dropdownOpen ? "active" : ""}`}>
-            <Link href="/logo.png" onClick={handleLinkClick}>
+            <Link href="https://school-admin-dashbord.vercel.app/login" onClick={handleLinkClick}>
               <span className="dropdown-icon">🏫</span>
-              School Login
+              School Admin Login
             </Link>
             <Link href="#" onClick={handleLinkClick}>
               <span className="dropdown-icon">👨‍💼</span>
