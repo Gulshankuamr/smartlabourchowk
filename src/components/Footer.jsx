@@ -11,7 +11,7 @@ export default function Footer() {
     { name: "About Us", href: "/about" },
     { name: "Features", href: "/feature" },
 
-    { name: "Demo", href: "/demo" },
+    { name: "Demo", href: "https://youtube.com/@foundercode?si=EKQYyxDwRrmWe3x5" },
   ];
 
   const solutions = [
