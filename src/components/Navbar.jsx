@@ -125,13 +125,13 @@ export default function Navbar() {
               <span className="dropdown-icon">👨‍💼</span>
               Student Login
             </Link>
-            <Link href="#" onClick={handleLinkClick}>
+            <Link href="https://teacher-dashborad.vercel.app/login" onClick={handleLinkClick}>
               <span className="dropdown-icon">👩‍🏫</span>
               Teacher Login
             </Link>
-            <Link href="#" onClick={handleLinkClick}>
+            <Link href="https://acoountent-dashbord.vercel.app/login" onClick={handleLinkClick}>
               <span className="dropdown-icon">👨‍💼</span>
-              Account Login
+              Accountant Login
             </Link>
           </div>
         </div>
