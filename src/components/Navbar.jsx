@@ -62,7 +62,7 @@ export default function Navbar() {
         <Link href="/" onClick={handleLinkClick}>
           <div className="logo-container">
             <Image
-              src="/finalLogo.jpeg"
+              src="/download.png"
               alt="School ERP Logo"
               width={130}
               height={45}

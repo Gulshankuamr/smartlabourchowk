@@ -7,7 +7,7 @@ export default function About() {
 
       {/* HERO */}
       <section className="about-hero">
-        <h1>About Our School ERP</h1>
+        <h1>About Our connetSkool </h1>
         <p>Smart. Simple. Powerful School Management System</p>
       </section>
 

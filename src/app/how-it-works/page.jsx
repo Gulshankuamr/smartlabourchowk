@@ -59,12 +59,24 @@ export default function HowItWorks() {
     },
   ];
 
+  const openWhatsApp = () => {
+    const phone = "919236788668";
+    const message = "Hello, I need support";
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+  };
+
+  const openYouTube = () => {
+    const url = "https://youtube.com/@foundercode?si=EKQYyxDwRrmWe3x5";
+    window.open(url, "_blank");
+  };
+
   return (
     <div className="howitworks-page">
       {/* Hero Section */}
       <div className="howitworks-hero">
         <h1>
-          How <span className="gold-text">SchoolERP</span> Works
+          How <span className="gold-text">connetSkool</span> Works
         </h1>
         <p>
           Get started in just a few simple steps and transform your institution
@@ -163,15 +175,19 @@ export default function HowItWorks() {
               </div>
             </div>
             <div className="support-buttons">
-              <button className="btn-primary">Schedule Demo</button>
-              <button className="btn-secondary">Contact Support</button>
+              {/* <button className="btn-primary">Schedule Demo</button> */}
+              <button className="btn-secondary" onClick={openWhatsApp}>
+                Contact Support
+              </button>
             </div>
           </div>
           <div className="support-card">
             <div className="support-icon">💬</div>
             <h3>Live Chat Support</h3>
             <p>Get instant answers from our support team</p>
-            <button className="chat-btn">Start Chat →</button>
+            <button className="chat-btn" onClick={openWhatsApp}>
+              Start Chat →
+            </button>
           </div>
         </div>
       </div>
@@ -180,11 +196,13 @@ export default function HowItWorks() {
       <div className="cta-section">
         <h2>Ready to Get Started?</h2>
         <p>
-          Join thousands of educational institutions already using SchoolERP
+          Join thousands of educational institutions already using connetSkool
         </p>
         <div className="cta-buttons">
-          <button className="cta-primary">Start Free Trial</button>
-          <button className="cta-secondary">Watch Demo Video</button>
+          {/* <button className="cta-primary">Start Free Trial</button> */}
+          <button className="cta-secondary" onClick={openYouTube}>
+            Watch Demo Video
+          </button>
         </div>
       </div>
     </div>

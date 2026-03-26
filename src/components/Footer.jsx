@@ -3,7 +3,7 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
 import "../styles//Footer.css";
-
+import Image from "next/image";
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -19,7 +19,7 @@ export default function Footer() {
   ];
 
   const resources = [
-    { name: "Blog", href: "/blog" },
+    // { name: "Blog", href: "/blog" },
     { name: "Help Center", href: "/support" },
    
   ];
@@ -64,12 +64,15 @@ export default function Footer() {
         <div className="footer-container">
           {/* Company Info */}
           <div className="footer-column company-column">
-            <div className="footer-logo">
-              <div className="logo-icon">🏫</div>
-              <span className="logo-text">
-                School<span className="logo-highlight">ERP</span>
-              </span>
-            </div>
+          <div className="footer-logo">
+  <Image 
+    src="/download.png" 
+    alt="ConnectSkool Logo" 
+    width={150} 
+    height={40} 
+    className="footer-logo-img"
+  />
+</div>
             <p className="footer-description">
               Revolutionizing education management with cutting-edge technology
               solutions for schools, colleges, and educational institutions
@@ -78,7 +81,7 @@ export default function Footer() {
             <div className="footer-contact">
               <div className="contact-item">
                 <span className="contact-icon">📧</span>
-                <a href="mailto:info@schoolknot.com">info@foundercodes.com</a>
+                <a href="mailto:info@schoolknot.com">sales@foundercodes.com</a>
               </div>
               <div className="contact-item">
                 <span className="contact-icon">📞</span>
@@ -131,7 +134,7 @@ export default function Footer() {
         <div className="footer-container">
           <div className="bottom-wrapper">
             <div className="copyright">
-              <p>© {currentYear} School ERP. All rights reserved.</p>
+              <p>© {currentYear} connectSkool. All rights reserved.</p>
             </div>
           </div>
         </div>

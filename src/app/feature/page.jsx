@@ -170,7 +170,7 @@ export default function Features() {
           <div className="integration-text">
             <span className="integration-badge">Seamless Integration</span>
             <h2>Works with Your Favorite Tools</h2>
-            <p>SchoolERP integrates smoothly with popular tools and platforms you already use</p>
+            <p> connetSkool integrates smoothly with popular tools and platforms you already use</p>
             <div className="integration-features">
               <div className="integration-feature">
                 <svg className="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

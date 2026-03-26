@@ -176,7 +176,7 @@ export default function Support() {
                 <div className="info-icon">📍</div>
                 <div>
                   <h4>Visit Us</h4>
-                  <p>123 Education Street, Bangalore, India</p>
+                  <p>Gaur City Mall Space Building 14Th Floor 14119, India</p>
                 </div>
               </div>
 
@@ -184,7 +184,7 @@ export default function Support() {
                 <div className="info-icon">📧</div>
                 <div>
                   <h4>Email Us</h4>
-                  <p>support@schooleerp.com</p>
+                  <p>sales@foundercodes.com</p>
                 </div>
               </div>
 
@@ -192,7 +192,7 @@ export default function Support() {
                 <div className="info-icon">📞</div>
                 <div>
                   <h4>Call Us</h4>
-                  <p>+91 98765 43210</p>
+                  <p>+91 9236788668</p>
                 </div>
               </div>
             </div>
