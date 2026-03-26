@@ -11,17 +11,17 @@ export default function Footer() {
     { name: "About Us", href: "/about" },
     { name: "Features", href: "/feature" },
 
-    { name: "Demo", href: "https://youtube.com/@foundercode?si=EKQYyxDwRrmWe3x5" },
+    {
+      name: "Demo",
+      href: "https://youtube.com/@foundercode?si=EKQYyxDwRrmWe3x5",
+    },
   ];
 
-  const solutions = [
- 
-  ];
+  const solutions = [];
 
   const resources = [
     // { name: "Blog", href: "/blog" },
     { name: "Help Center", href: "/support" },
-   
   ];
 
   const legal = [
@@ -64,15 +64,15 @@ export default function Footer() {
         <div className="footer-container">
           {/* Company Info */}
           <div className="footer-column company-column">
-          <div className="footer-logo">
-  <Image 
-    src="/finalLogo.png" 
-    alt="ConnectSkool Logo" 
-    width={150} 
-    height={40} 
-    className="footer-logo-img"
-  />
-</div>
+            <div className="footer-logo">
+              <Image
+                src="/finalLogo.png"
+                alt="ConnectSkool Logo"
+                width={150}
+                height={40}
+                className="footer-logo-img"
+              />
+            </div>
             <p className="footer-description">
               Revolutionizing education management with cutting-edge technology
               solutions for schools, colleges, and educational institutions
@@ -89,7 +89,10 @@ export default function Footer() {
               </div>
               <div className="contact-item">
                 <span className="contact-icon">📍</span>
-                <span> Gaur City Mall  office space building 14 floor 14119</span>
+                <span>
+                  {" "}
+                  Gaur City Mall office space building 14 floor 14119
+                </span>
               </div>
             </div>
           </div>
@@ -108,7 +111,6 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-
 
           {/* Resources & Legal Combined */}
           <div className="footer-column">

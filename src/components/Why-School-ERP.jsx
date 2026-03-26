@@ -68,7 +68,7 @@ export default function WhySchoolERP() {
         <div className="header-container">
           <span className="badge">Why Choose Us</span>
           <h2 className="header-title">
-            Why School<span className="highlight">ERP</span>?
+            Why connetSkool<span className="highlight"></span>?
           </h2>
           <p className="header-description">
             Discover the advantages that make us the preferred choice for educational institutions worldwide
@@ -126,7 +126,7 @@ export default function WhySchoolERP() {
           <div className="cta-content">
             <h3 className="cta-title">Ready to Transform Your Institution?</h3>
             <p className="cta-description">
-              Join hundreds of educational institutions already using SchoolERP to streamline their operations
+              Join hundreds of educational institutions already using connetSkool to streamline their operations
             </p>
             <div className="cta-buttons">
               <button className="cta-primary">Start Free Trial</button>
