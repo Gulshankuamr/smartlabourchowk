@@ -66,7 +66,7 @@ export default function Footer() {
           <div className="footer-column company-column">
           <div className="footer-logo">
   <Image 
-    src="/download.png" 
+    src="/finalLogo.png" 
     alt="ConnectSkool Logo" 
     width={150} 
     height={40} 
