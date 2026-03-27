@@ -9,7 +9,7 @@ export default function Hero() {
 
       <div className="hero-content">
         <p className="hero-subtitle">
-          connetSkool | PREPARE FOR NEW FEATURES
+          connectSkool | PREPARE FOR NEW FEATURES
         </p>
 
         <h1 className="hero-title">

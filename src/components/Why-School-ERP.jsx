@@ -68,7 +68,7 @@ export default function WhySchoolERP() {
         <div className="header-container">
           <span className="badge">Why Choose Us</span>
           <h2 className="header-title">
-            Why connetSkool<span className="highlight"></span>?
+            Why connectSkool<span className="highlight"></span>?
           </h2>
           <p className="header-description">
             Discover the advantages that make us the preferred choice for educational institutions worldwide
