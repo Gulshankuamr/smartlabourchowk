@@ -117,19 +117,19 @@ export default function Navbar() {
 
           {/* Dropdown Menu */}
           <div className={`dropdown-menu ${dropdownOpen ? "active" : ""}`}>
-            <Link href="https://school-admin-dashbord.vercel.app/login" onClick={handleLinkClick}>
+            <Link href="https://school-admin-dashbord-techeradmin-a.vercel.app/login" onClick={handleLinkClick}>
               <span className="dropdown-icon">🏫</span>
               School Admin Login
             </Link>
-            <Link href="#" onClick={handleLinkClick}>
+            <Link href="https://student-dashborad-sand.vercel.app/login" onClick={handleLinkClick}>
               <span className="dropdown-icon">👨‍💼</span>
               Student Login
             </Link>
-            <Link href="https://teacher-dashborad.vercel.app/login" onClick={handleLinkClick}>
+            <Link href="https://school-admin-dashbord-techeradmin-a.vercel.app/login" onClick={handleLinkClick}>
               <span className="dropdown-icon">👩‍🏫</span>
               Teacher Login
             </Link>
-            <Link href="https://acoountent-dashbord.vercel.app/login" onClick={handleLinkClick}>
+            <Link href="https://school-admin-dashbord-techeradmin-a.vercel.app/login" onClick={handleLinkClick}>
               <span className="dropdown-icon">👨‍💼</span>
               Accountant Login
             </Link>

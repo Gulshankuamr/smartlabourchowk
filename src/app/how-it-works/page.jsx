@@ -76,7 +76,7 @@ export default function HowItWorks() {
       {/* Hero Section */}
       <div className="howitworks-hero">
         <h1>
-          How <span className="gold-text">connetSkool</span> Works
+          How <span className="gold-text">connectSkool</span> Works
         </h1>
         <p>
           Get started in just a few simple steps and transform your institution
@@ -196,7 +196,7 @@ export default function HowItWorks() {
       <div className="cta-section">
         <h2>Ready to Get Started?</h2>
         <p>
-          Join thousands of educational institutions already using connetSkool
+          Join thousands of educational institutions already using connectSkool
         </p>
         <div className="cta-buttons">
           {/* <button className="cta-primary">Start Free Trial</button> */}
