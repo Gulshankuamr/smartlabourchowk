@@ -1,16 +1,9 @@
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
-import Features from "@/components/Feature";
-import Footer from "@/components/Footer";
-import WhySchoolERP from "@/components/Why-School-ERP";
+import Home from '../views/home/Home'
 
-export default function Home() {
-  return (
-    <>
-      <Navbar />
-      <Hero />
-      <WhySchoolERP />
-      <Features />
-    </>
-  );
+export const metadata = {
+  title: 'ConnectSkool | Complete School ERP Software',
+}
+
+export default function Page() {
+  return <Home />
 }

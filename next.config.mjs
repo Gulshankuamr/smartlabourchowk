@@ -1,6 +1,20 @@
+import path from 'path'
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
-};
+  reactStrictMode: true,
+  outputFileTracingRoot: path.join(process.cwd()),
 
-export default nextConfig;
+  transpilePackages: ['three'], // ✅ yaha shift karo
+
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+    ],
+  },
+}
+
+export default nextConfig
