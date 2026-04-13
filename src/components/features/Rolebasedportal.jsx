@@ -68,7 +68,7 @@ const roles = [
     heading: 'Admin & Finance — Streamlined Leadership',
     sub: 'Total Institutional Control in One Dashboard',
     description: 'ConnectSkool transforms the Principal\'s office into a data-driven command center. Access real-time graphical dashboards showing student strength, fee collection, staff attendance, and payroll — all at a glance. The finance portal tracks day-wise fee collection and outstanding dues with full transparency. Generate salary slips, TC certificates, bonafide letters, and other critical documents in a single click — saving hours of manual work every week.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&h=600&fit=crop',
+    image: '/assets/moduleherooo.webp',
   },
 ];
 

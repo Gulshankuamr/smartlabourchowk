@@ -43,7 +43,7 @@ export default function ModulesHero() {
         {/* Image */}
         <div className="relative w-[90%] md:w-[75%] lg:w-[65%] -mb-20">
           <Image
-            src="/dashboard.png" // 👉 apni image yaha daal
+            src="/assets/moduleheroo.webp" 
             alt="Dashboard Preview"
             width={1200}
             height={700}

@@ -6,6 +6,9 @@ import WhatsAppFloat from '../components/shared/WhatsAppFloat'
 export const metadata = {
   title: 'ConnectSkool',
   description: 'Complete School ERP Software',
+  icons: {
+    icon: '/favicon.ico',
+  },
 }
 
 export default function RootLayout({ children }) {
