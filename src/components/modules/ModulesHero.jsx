@@ -1,8 +1,15 @@
 "use client";
 
 import Image from "next/image";
+import DemoPopModal from "../../views/demo/DemoPopModal";
+import { useState } from "react";
+
 
 export default function ModulesHero() {
+  
+const [isModalOpen, setIsModalOpen] = useState(false);
+
+
   return (
     <section className="relative w-full bg-[#295168] overflow-hidden pt-20 pb-0">
 
@@ -28,7 +35,8 @@ export default function ModulesHero() {
 
         {/* CTA */}
         <div className="mt-8">
-          <button className="px-6 py-3 rounded-full bg-[#F0A80A] text-white font-semibold shadow-md hover:scale-105 transition">
+          <button  onClick={() => setIsModalOpen(true)} 
+           className="px-6 py-3 rounded-full bg-[#F0A80A] text-white font-semibold shadow-md hover:scale-105 transition">
             Request Demo
           </button>
         </div>
@@ -51,6 +59,11 @@ export default function ModulesHero() {
           />
         </div>
       </div>
+      
+            <DemoPopModal 
+              isOpen={isModalOpen} 
+              onClose={() => setIsModalOpen(false)} 
+            />
 
     </section>
   );

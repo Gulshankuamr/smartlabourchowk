@@ -171,7 +171,7 @@ export default function TestimonialsSection() {
     // Page BG → #F8F9FC
     <section
       style={{ backgroundColor: C.pageBg, minHeight: "100vh" }}
-      className="w-full flex items-center justify-center py-20 px-4"
+      className="w-full flex items-center justify-center py-20 px-4  "
     >
       {/* Dark section → #1E4E6D */}
       <div style={{

@@ -5,6 +5,8 @@ import { Shield, Users, Calculator, GraduationCap, ClipboardList, Wallet, Sparkl
 import { HiOutlineCalendar } from 'react-icons/hi2'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from "next/link";
+import DemoPopModal from "../../views/demo/DemoPopModal";
+import { useState } from "react";
 
 import dynamic from "next/dynamic";
 
@@ -12,6 +14,8 @@ const ErpOrbit = dynamic(
   () => import("../shared/ErpOrbit"),
   { ssr: false }
 );
+
+
 
 // const MODULES = [
 //   {
@@ -67,7 +71,7 @@ const MODULES = [
     title: "Admin Control Center",
     desc: "Centralized access...",
     icon: Shield,
-    href: "https://school-admin-dashbord-techeradmin-a.vercel.app/login", // 👈 link add
+    href: "https://school-admin-dashbord-techeradmin-a.vercel.app/login", 
   },
   {
     id: "teacher",
@@ -97,6 +101,8 @@ const MODULES = [
 
 
 export default function HeroSection() {
+const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <section className="relative isolate min-h-screen overflow-hidden bg-[linear-gradient(135deg,_#0f172a_0%,_#1e293b_40%,_#0ea5e9_100%)] text-white">
 
@@ -128,6 +134,7 @@ export default function HeroSection() {
           {/* CTA Buttons */}
           <div className="mt-8 flex flex-wrap gap-3">
             <button
+            onClick={() => setIsModalOpen(true)} 
               className="flex items-center gap-2 rounded-full 
              bg-[#F0970A] px-6 py-3 text-sm font-semibold text-white 
              border-2 border-[#F0970A]
@@ -140,7 +147,7 @@ export default function HeroSection() {
             </button>
 
 
-            <button
+            {/* <button
               className="flex items-center gap-2 rounded-full 
              bg-sky-500/15 px-6 py-3 text-sm font-semibold text-white 
              border-2 border-[#F0970A]
@@ -148,9 +155,11 @@ export default function HeroSection() {
              transition-all duration-300 ease-out 
              hover:bg-white hover:text-black hover:-translate-y-0.5">
               Book a Demo
-            </button>
+            </button> */}
           </div>
+           
 
+           
 
           {/* MODULE BUTTONS */}
           <div className="mt-8 flex flex-wrap gap-2">
@@ -353,6 +362,11 @@ export default function HeroSection() {
         </div>
 
       </div>
+
+      <DemoPopModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
     </section>
   );
 }
