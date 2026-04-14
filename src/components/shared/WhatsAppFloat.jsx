@@ -5,7 +5,7 @@ import { useState, useRef, useEffect } from "react";
 // ─────────────────────────────────────────────────────────
 //  CONFIG — yahan apni details badlo
 // ─────────────────────────────────────────────────────────
-const PHONE   = "919236788668";             // country code + number, no +
+const PHONE   = "91923678866";             // country code + number, no +
 const MESSAGE = "Hi ConnectSkool, I want to know more about your School ERP";
 const GIF_SRC = "/whatsappoopsticky.gif";   // apni GIF ka path (public folder mein rakhna)
 
