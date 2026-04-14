@@ -4,6 +4,7 @@ import { Shield, Users, Calculator, GraduationCap, ClipboardList, Wallet, Sparkl
 // import ErpOrbit from "../shared/ErpOrbit";
 import { HiOutlineCalendar } from 'react-icons/hi2'
 import { motion, AnimatePresence } from 'framer-motion'
+import Link from "next/link";
 
 import dynamic from "next/dynamic";
 
@@ -12,50 +13,88 @@ const ErpOrbit = dynamic(
   { ssr: false }
 );
 
+// const MODULES = [
+//   {
+//     id: "admin",
+//     label: "Admin",
+//     title: "Admin Control Center",
+//     desc: "Centralized access to users, permissions, and school-wide settings in one secure place.",
+//     icon: Shield,
+//   },
+//   {
+//     id: "teacher",
+//     label: "Teacher",
+//     title: "Teacher Workspace",
+//     desc: "Plan lessons, manage attendance, and track classroom progress with ease.",
+//     icon: Users,
+//   },
+//   {
+//     id: "accountant",
+//     label: "Accountant",
+//     title: "Accounts & Ledger",
+//     desc: "Keep budgets, expenses, and audits aligned with real-time financial insights.",
+//     icon: Calculator,
+//   },
+//   {
+//     id: "student",
+//     label: "Student",
+//     title: "Student Hub",
+//     desc: "Profiles, performance, and communication -- everything students need at a glance.",
+//     icon: GraduationCap,
+//   },
+//   {
+//     id: "exam",
+//     label: "Exam Management",
+//     title: "Exam Management",
+//     desc: "Schedule exams, manage grading, and publish results securely in minutes.",
+//     icon: ClipboardList,
+//   },
+//   {
+//     id: "fees",
+//     label: "Fees Management",
+//     title: "Fees Management",
+//     desc: "Automate invoices, payments, and reminders with flexible fee structures.",
+//     icon: Wallet,
+//   },
+// ];
+
+
+
 const MODULES = [
   {
     id: "admin",
     label: "Admin",
     title: "Admin Control Center",
-    desc: "Centralized access to users, permissions, and school-wide settings in one secure place.",
+    desc: "Centralized access...",
     icon: Shield,
+    href: "https://school-admin-dashbord-techeradmin-a.vercel.app/login", // 👈 link add
   },
   {
     id: "teacher",
     label: "Teacher",
     title: "Teacher Workspace",
-    desc: "Plan lessons, manage attendance, and track classroom progress with ease.",
+    desc: "Plan lessons...",
     icon: Users,
+    href: "https://school-admin-dashbord-techeradmin-a.vercel.app/login",
   },
   {
     id: "accountant",
     label: "Accountant",
     title: "Accounts & Ledger",
-    desc: "Keep budgets, expenses, and audits aligned with real-time financial insights.",
+    desc: "Keep budgets...",
     icon: Calculator,
+    href: "https://school-admin-dashbord-techeradmin-a.vercel.app/login",
   },
   {
     id: "student",
     label: "Student",
     title: "Student Hub",
-    desc: "Profiles, performance, and communication -- everything students need at a glance.",
+    desc: "Profiles...",
     icon: GraduationCap,
-  },
-  {
-    id: "exam",
-    label: "Exam Management",
-    title: "Exam Management",
-    desc: "Schedule exams, manage grading, and publish results securely in minutes.",
-    icon: ClipboardList,
-  },
-  {
-    id: "fees",
-    label: "Fees Management",
-    title: "Fees Management",
-    desc: "Automate invoices, payments, and reminders with flexible fee structures.",
-    icon: Wallet,
+    href: "https://student-dashborad-sand.vercel.app/login",
   },
 ];
+
 
 export default function HeroSection() {
   return (
@@ -112,21 +151,43 @@ export default function HeroSection() {
             </button>
           </div>
 
+
           {/* MODULE BUTTONS */}
           <div className="mt-8 flex flex-wrap gap-2">
             {MODULES.map((module) => {
               const Icon = module.icon;
+              const hasLink = !!module.href;
+
               return (
                 <div key={module.id} className="group relative">
-                  <button className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold text-slate-200 shadow-lg shadow-black/30 transition duration-300 ease-out hover:-translate-y-0.5 hover:border-sky-400/40 hover:bg-white/10">
+
+                  {/* CLICKABLE LINK */}
+                  <Link
+                    href={module.href || "#"}
+                    target={hasLink ? "_blank" : undefined}
+                    rel={hasLink ? "noopener noreferrer" : undefined}
+                    className={`flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-semibold shadow-lg shadow-black/30 transition duration-300 ease-out
+            ${hasLink
+                        ? "border-sky-400/40 bg-sky-500/10 text-white hover:-translate-y-0.5 hover:bg-sky-500/20 cursor-pointer"
+                        : "border-white/10 bg-white/5 text-slate-400 cursor-not-allowed opacity-60"
+                      }`}
+                  >
                     <span className="flex h-6 w-6 items-center justify-center rounded-full bg-sky-500/15 text-sky-300">
                       <Icon size={13} />
                     </span>
                     {module.label}
-                  </button>
+                    {hasLink && (
+                      <span className="ml-0.5 flex items-center gap-0.5 rounded-full bg-white/10 px-1.5 py-0.5 text-[10px] font-bold text-sky-300">
+                        Open
+                        <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg" className="ml-0.5">
+                          <path d="M1.5 7.5L7.5 1.5M7.5 1.5H3M7.5 1.5V6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </span>
+                    )}
+                  </Link>
 
-                  {/* Hover tooltip — opens upward */}
-                  <div className="pointer-events-none absolute bottom-full left-0 z-20 mb-3 w-60 origin-bottom rounded-2xl border border-white/15 bg-slate-900/80 p-4 text-left text-slate-200 opacity-0 shadow-xl shadow-black/40 backdrop-blur-2xl transition duration-300 ease-out scale-95 group-hover:scale-100 group-hover:opacity-100">
+                  {/* TOOLTIP */}
+                  <div className="pointer-events-none absolute bottom-full left-0 z-20 mb-3 w-64 origin-bottom rounded-2xl border border-white/15 bg-slate-900/80 p-4 text-left text-slate-200 opacity-0 shadow-xl shadow-black/40 backdrop-blur-2xl transition duration-300 ease-out scale-95 group-hover:scale-100 group-hover:opacity-100">
                     <div className="flex items-start gap-3">
                       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-sky-500/20 text-sky-300">
                         <Icon size={18} />
@@ -134,9 +195,14 @@ export default function HeroSection() {
                       <div>
                         <p className="text-sm font-semibold text-white">{module.title}</p>
                         <p className="mt-1 text-xs leading-relaxed text-slate-300">{module.desc}</p>
+                        {hasLink
+                          ? <p className="mt-2 text-[10px] font-semibold text-sky-400">Click to open dashboard →</p>
+                          : <p className="mt-2 text-[10px] font-semibold text-slate-500">Coming soon</p>
+                        }
                       </div>
                     </div>
                   </div>
+
                 </div>
               );
             })}

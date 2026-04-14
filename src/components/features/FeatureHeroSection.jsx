@@ -174,7 +174,7 @@ function Features() {
           style={{ width: 480, height: 480, background: '#1E4E6D', filter: 'blur(130px)', opacity: 0.12, bottom: -180, right: -80 }} />
 
         {/* Content */}
-        <div className="relative z-[2] flex flex-col items-center w-full max-w-[860px]">
+        <div className="relative z-[2] flex flex-col items-center w-full max-w-[920px]">
 
           {/* H1 — exactly 2 lines */}
           <h1 className="fa2 w-full mb-5"
