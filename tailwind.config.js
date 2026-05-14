@@ -1,13 +1,20 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./src/app/**/*.{js,jsx}', './src/components/**/*.{js,jsx}', './src/views/**/*.{js,jsx}'],
+  content: ['./src/**/*.{js,jsx}'],
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'Poppins', 'system-ui', '-apple-system', 'sans-serif'],
-        display: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-inter)', 'var(--font-poppins)', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['var(--font-epilogue)', 'var(--font-poppins)', 'system-ui', 'sans-serif'],
       },
       colors: {
+        slc: {
+          primary: '#FF6B00',
+          dark: '#1A1A1A',
+          bg: '#FFF7F2',
+          success: '#16A34A',
+          danger: '#DC2626',
+        },
         shell: '#f8f9fc',
         ink: '#1e293b',
         slateSoft: '#64748b',
@@ -27,6 +34,7 @@ export default {
         'lift-accent': '0 12px 32px rgba(245, 158, 11, 0.22)',
         glow: '0 0 40px rgba(37, 99, 235, 0.12)',
         'card-hover': '0 20px 44px rgba(15, 23, 42, 0.10)',
+        slc: '0 16px 48px rgba(255, 107, 0, 0.18)',
       },
       backgroundImage: {
         'hero-glow': 'radial-gradient(circle at 78% 30%, rgba(245, 158, 11, 0.12), transparent 40%), radial-gradient(circle at 14% 15%, rgba(37, 99, 235, 0.10), transparent 32%)',
@@ -34,6 +42,7 @@ export default {
         'gradient-accent': 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
         'gradient-hero': 'linear-gradient(180deg, #f8f9fc 0%, #fffbeb 50%, #f8f9fc 100%)',
         'gradient-cta': 'linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%)',
+        'slc-gradient': 'linear-gradient(135deg, #FF6B00 0%, #FF9A00 100%)',
       },
       borderRadius: {
         '2xl': '1rem',

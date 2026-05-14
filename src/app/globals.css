@@ -2,17 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ── Base ── */
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  @apply bg-shell text-ink antialiased;
-  font-family: 'Inter', 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  @apply antialiased;
+  font-family: var(--font-inter), var(--font-poppins), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
-/* ── Layout Utilities ── */
 .container-shell {
   @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
 }
@@ -21,7 +19,6 @@ body {
   @apply py-16 md:py-24;
 }
 
-/* ── Card System ── */
 .glass-card {
   @apply rounded-3xl border border-white/60 bg-white/80 shadow-soft backdrop-blur-sm transition-all duration-300;
 }
@@ -30,7 +27,6 @@ body {
   @apply shadow-card-hover -translate-y-1;
 }
 
-/* ── Section Headings ── */
 .section-title {
   @apply text-center font-display text-3xl font-bold text-ink sm:text-4xl lg:text-5xl;
 }
@@ -39,7 +35,6 @@ body {
   @apply mx-auto mt-4 max-w-2xl text-center text-base text-slateSoft sm:text-lg;
 }
 
-/* ── Gradient Text ── */
 .gradient-text-brand {
   @apply bg-gradient-to-r from-brand to-brand-dark bg-clip-text text-transparent;
 }
@@ -48,7 +43,6 @@ body {
   @apply bg-gradient-to-r from-accent to-amber-600 bg-clip-text text-transparent;
 }
 
-/* ── Scroll animations ── */
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(24px);
@@ -60,5 +54,19 @@ body {
   transform: translateY(0);
 }
 
+.slider-track {
+  animation: home-video-marquee 34s linear infinite;
+}
 
+.slider-track:hover {
+  animation-play-state: paused;
+}
 
+@keyframes home-video-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
