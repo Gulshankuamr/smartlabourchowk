@@ -10,8 +10,8 @@ export default function StickyConversionDock() {
     <div className="pointer-events-none fixed bottom-5 right-4 z-[60] flex flex-col items-end gap-3 sm:bottom-8 sm:right-6">
       <motion.div
         className="pointer-events-auto"
-        animate={{ y: [0, -4, 0] }}
-        transition={{ repeat: Infinity, duration: 3.2, ease: 'easeInOut' }}
+        // animate={{ y: [0, -4, 0] }}
+        // transition={{ repeat: Infinity, duration: 3.2, ease: 'easeInOut' }}
       >
         <Link
           href={WHATSAPP_LINK}

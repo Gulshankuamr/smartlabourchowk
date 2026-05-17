@@ -1,5 +1,6 @@
 ﻿'use client'
 
+import { useEffect, useRef } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Mic, RotateCcw, X } from 'lucide-react'
 import AssistantAvatar from './AssistantAvatar'
@@ -39,6 +40,17 @@ function SpeakingOrb({ active }) {
 
 export default function AssistantModal() {
   const { isOpen, closeAssistant, restart, isSpeaking } = useAssistant()
+  const modalRef = useRef(null)
+
+  useEffect(() => {
+    if (!isOpen) return undefined
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') closeAssistant()
+    }
+    window.addEventListener('keydown', onKeyDown)
+    modalRef.current?.focus()
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [closeAssistant, isOpen])
 
   return (
     <AnimatePresence>
@@ -52,31 +64,71 @@ export default function AssistantModal() {
         >
           <motion.div
             onClick={(e) => e.stopPropagation()}
+            ref={modalRef}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Smart Labour AI Assistant"
+            tabIndex={-1}
             initial={{ opacity: 0, y: 40, scale: 0.92 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.96 }}
             transition={{ type: 'spring', stiffness: 260, damping: 26 }}
-            className="absolute bottom-0 left-0 right-0 h-[80vh] rounded-t-[2rem] border border-white/30 bg-gradient-to-b from-white/90 to-[#FFF7F2] p-4 shadow-2xl sm:bottom-6 sm:left-auto sm:right-6 sm:h-[700px] sm:w-[430px] sm:rounded-[2rem]"
+            className={[
+              // Positioning
+              'absolute bottom-0 left-0 right-0',
+              'sm:bottom-6 sm:left-auto sm:right-6 sm:w-[430px]',
+              // Sizing — controlled height, no overflow escape
+              'h-[85dvh] sm:h-[700px]',
+              // Shape & surface
+              'rounded-t-[2rem] sm:rounded-[2rem]',
+              'border border-white/30',
+              'bg-gradient-to-b from-white/95 to-[#FFF7F2]',
+              'shadow-2xl',
+              // KEY: flex column + overflow hidden keeps children inside
+              'flex flex-col overflow-hidden',
+            ].join(' ')}
           >
-            <div className="mb-3 flex items-center justify-between gap-2 rounded-2xl border border-white/50 bg-white/70 p-3 shadow-sm backdrop-blur">
-              <div className="flex items-center gap-3">
-                <AssistantAvatar speaking={isSpeaking} />
-                <div>
-                  <p className="text-sm font-extrabold text-[#1A1A1A]">Smart Labour AI Assistant</p>
-                  <p className="text-[11px] font-semibold text-neutral-600">
-                    <span className="mr-1 inline-block h-2 w-2 rounded-full bg-green-500" />
-                    Online {isSpeaking ? '• Speaking...' : '• Listening'}
-                  </p>
+            {/* ── Header (shrink-0 so it never scrolls away) ── */}
+            <div className="shrink-0 px-4 pt-4 pb-2">
+              <div className="flex items-center justify-between gap-2 rounded-2xl border border-white/50 bg-white/70 p-3 shadow-sm backdrop-blur">
+                <div className="flex items-center gap-3">
+                  <AssistantAvatar speaking={isSpeaking} />
+                  <div>
+                    <p className="text-sm font-extrabold text-[#1A1A1A]">Smart Labour AI Assistant</p>
+                    <p className="text-[11px] font-semibold text-neutral-600">
+                      <span className="mr-1 inline-block h-2 w-2 rounded-full bg-green-500" />
+                      Online {isSpeaking ? '• Speaking...' : '• Listening'}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <SpeakingOrb active={isSpeaking} />
+                  <VoiceWelcome />
+                  <button
+                    type="button"
+                    onClick={restart}
+                    className="rounded-full bg-white p-2 text-neutral-600 ring-1 ring-neutral-200"
+                    aria-label="Restart assistant chat"
+                  >
+                    <RotateCcw className="h-4 w-4" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={closeAssistant}
+                    className="rounded-full bg-white p-2 text-neutral-600 ring-1 ring-neutral-200"
+                    aria-label="Close assistant"
+                  >
+                    <X className="h-4 w-4" />
+                  </button>
                 </div>
               </div>
-              <div className="flex items-center gap-2">
-                <SpeakingOrb active={isSpeaking} />
-                <VoiceWelcome />
-                <button type="button" onClick={restart} className="rounded-full bg-white p-2 text-neutral-600 ring-1 ring-neutral-200"><RotateCcw className="h-4 w-4" /></button>
-                <button type="button" onClick={closeAssistant} className="rounded-full bg-white p-2 text-neutral-600 ring-1 ring-neutral-200"><X className="h-4 w-4" /></button>
-              </div>
             </div>
-            <AssistantChat />
+
+            {/* ── Chat body — grows to fill remaining space ── */}
+            {/* min-h-0 is essential: without it a flex child won't shrink below its content size */}
+            <div className="min-h-0 flex-1 px-4 pb-4">
+              <AssistantChat />
+            </div>
           </motion.div>
         </motion.div>
       )}

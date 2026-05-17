@@ -45,6 +45,7 @@ export default {
   },
   problem: {
     title: 'Thousands of workers still stand at the chowk every day',
+    downloadCta: 'Download App Free',
     cards: [
       { title: 'No steady work', body: 'Income changes day to day.' },
       { title: 'Time wasted', body: 'Hours lost waiting in sun and dust.' },

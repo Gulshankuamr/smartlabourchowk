@@ -13,6 +13,7 @@ export default function MessageCard({ options = [], onChoose }) {
               href={opt.href}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={opt.label}
               className="rounded-xl bg-gradient-to-r from-[#FF6B00] to-[#FF9A00] px-3 py-2 text-xs font-bold text-white shadow-md transition hover:brightness-105"
             >
               {opt.label}
@@ -25,6 +26,7 @@ export default function MessageCard({ options = [], onChoose }) {
             key={opt.label}
             type="button"
             onClick={() => onChoose(opt)}
+            aria-label={opt.label}
             className="rounded-xl bg-white px-3 py-2 text-xs font-bold text-[#FF6B00] ring-1 ring-[#FF6B00]/25 transition hover:bg-[#FFF7F2]"
           >
             {opt.label}
